@@ -13,6 +13,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.setValue
 import androidx.core.content.ContextCompat
 import com.example.finpilotai.data.sms.SmsReader
+import com.example.finpilotai.ui.dashboard.DashboardScreen
 import com.example.finpilotai.ui.theme.FinPilotAITheme
 
 class MainActivity : ComponentActivity() {
@@ -45,7 +46,9 @@ class MainActivity : ComponentActivity() {
 
                     when (smsCount) {
                         -1 -> Text("SMS Permission Denied")
-                        else -> Text("Total SMS : $smsCount")
+                        else -> DashboardScreen(
+                            smsCount = smsCount
+                        )
                     }
 
                 }
